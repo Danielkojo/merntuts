@@ -15,7 +15,7 @@ axios.defaults.withCredentials=true;
   
         .then(res=>{ if (res.data.role === "Success"){
           if(res.data.role === "admin"){
-            nav
+            nav('/dashboard')
           }
         }
     
