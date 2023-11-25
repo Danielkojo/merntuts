@@ -2,7 +2,8 @@ import React from 'react'
 import { useState } from 'react'
 import axios from 'axios'
 import {   useNavigate } from 'react-router-dom'
-
+import Dashboard from './Dashboard'
+import Home from './Home'
 
 const Login = () => {
 axios.defaults.withCredentials=true;
@@ -12,20 +13,23 @@ axios.defaults.withCredentials=true;
     const handleSubmit = (e)=>{
         e.preventDefault()
         axios.post('http://localhost:4000/login ',{email,password})
-  
-        .then(res=>{ if (res.data.role === "Success"){
-          if(res.data.role === "admin"){
-            nav('/dashboard')
-          }
-        }
-    
-    
-    }).catch(err=>console.log(err))
+
+
+        .then(res=>{
+   
+    if(res.data.Status === "Success"){
+      if(res.data.role === "admin"){
+        nav('/dashboard')
+      }
+      else{
+nav('/')
+      }
     }
+    }).catch(err=>console.log(err))
+    }   
   return (
     <div>
-      {/**/}
-
+      
 
 <div className ="d-flex justify-content-center align-items-center bg-secondary vh-100"                                           
 >
