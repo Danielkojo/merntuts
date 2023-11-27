@@ -14,7 +14,7 @@ const nav =useNavigate();
     const handleSubmit = (e)=>{
         e.preventDefault()
         axios.post('http://localhost:4000/register',{name,email,password})
-        .then(req=>{nav("/login")
+        .then(req=>{nav("/")
     
     
     }).catch(err=>console.log(err))

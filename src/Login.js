@@ -2,11 +2,10 @@ import React from 'react'
 import { useState } from 'react'
 import axios from 'axios'
 import {   useNavigate } from 'react-router-dom'
-import Dashboard from './Dashboard'
-import Home from './Home'
+
 
 const Login = () => {
-axios.defaults.withCredentials=true;
+  axios.defaults.withCredentials=true;
   const nav =useNavigate();
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
@@ -26,7 +25,7 @@ nav('/')
       }
     }
     }).catch(err=>console.log(err))
-    }   
+    }    
   return (
     <div>
       
