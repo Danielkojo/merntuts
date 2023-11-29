@@ -20,7 +20,7 @@ const NavBar = () => {
     <div className='navbar-header'>
       <div> <h3>Blog  App</h3></div>
       <div>
-<a href="" className='link'>Home</a> 
+      <Link to="/" className='link'>Home</Link>
 <Link to="/create" className='link'>Create</Link>
 <a href="" className='link'>Contact</a>
 
